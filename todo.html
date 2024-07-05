@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="todo.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/40fc58633b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <title>Todo App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="todos-div">
+        <div class="score-div">
+          <div class="score-1">
+            <h1 class="todo-heading">todo app</h1>
+            <p class="todo-desc">keep it up!</p>
+            <div class="meter-con">
+              <meter id="meter" min="0" max="100"></meter>
+              <span id="meter-percentage"></span>
+            </div>
+          </div>
+          <h1 id="weldone">Weldone!</h1>
+          <div class="score-2">
+            <span id="done">0</span> / <span id="total">0</span>
+          </div>
+        </div>
+        <div class="input-con">
+          <input
+            type="text"
+            class="input-text"
+            id="inputText"
+            placeholder="Add new task"
+          />
+          <button class="add-btn" id="addBtn" title="add todo">Add</button>
+        </div>
+        <p id="added-msg">* It is already added. Try new one</p>
+        <ul class="todos-con" id="todosCon" reversed></ul>
+      </div>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>

@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Cookie&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-image: url("https://res.cloudinary.com/duq1ylxl3/image/upload/v1719751562/Untitled_design_4_aqkwvi.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todos-div {
+  width: 550px;
+  height: 95vh;
+  backdrop-filter: blur(5px);
+}
+
+.score-div {
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #fc0339;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px #fc0339;
+}
+
+.todo-heading {
+  font-size: 36px;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.todo-desc {
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+  text-transform: capitalize;
+  margin: 0 0 5px 3px;
+  color: #000;
+  opacity: 0.8;
+}
+
+.meter-con {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#meter {
+  width: 100%;
+  height: 20px;
+  margin: 5px 0;
+}
+
+#meter::-webkit-meter-optimum-value {
+  background-color: #17e810;
+}
+#meter::-webkit-meter-bar {
+  border: 1px solid #000;
+}
+
+#meter-percentage {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #000;
+  opacity: 0.4;
+}
+
+#weldone {
+  font-family: "Lobster";
+  font-size: 42px;
+  display: none;
+  color: #d11592;
+  text-shadow: 1px 0 1px #000;
+}
+
+.score-2 {
+  background-color: #f09c26;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cookie";
+  font-weight: 600;
+  box-shadow: 0 0 5px #000;
+}
+
+#total,
+#done {
+  margin: 0 7px;
+}
+
+@media screen and (max-width: 570px) {
+  .todos-div {
+    padding: 10px;
+    height: 100vh;
+  }
+  .score-div {
+    padding: 10px;
+  }
+  .todo-heading {
+    font-size: 22px;
+  }
+  .todo-desc {
+    font-size: 14px;
+  }
+  #meter {
+    height: 15px;
+  }
+
+  #meter-percentage {
+    font-size: 12px;
+  }
+  #weldone {
+    font-size: 22px;
+  }
+  .score-2 {
+    width: 70px;
+    height: 70px;
+    font-size: 20px;
+  }
+}
+
+.input-con {
+  margin: 15px 0 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-text {
+  width: 85%;
+  background-color: transparent;
+  height: 35px;
+  border-radius: 6px;
+  padding: 8px;
+  border: 2px solid #000;
+  color: #d11592;
+  outline: none;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.input-text::placeholder {
+  font-size: 16px;
+}
+
+.add-btn {
+  font-size: 16px;
+  font-weight: 600;
+  width: 70px;
+  height: 35px;
+  background-color: #f0dd0c;
+  outline: 1px groove #000;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #20d450;
+}
+
+#added-msg {
+  font-size: 16px;
+  margin: 0 0 12px 15px;
+  visibility: hidden;
+  color: #000fff;
+}
+
+@media screen and (max-width: 570px) {
+  .input-text {
+    height: 30px;
+    font-size: 16px;
+    width: 90%;
+  }
+
+  .input-text::placeholder {
+    font-size: 15px;
+  }
+
+  .add-btn {
+    font-size: 16px;
+    font-weight: 600;
+    width: 60px;
+    height: 30px;
+  }
+
+  #added-msg {
+    font-size: 12px;
+    margin: 0 0 12px 5px;
+  }
+}
+
+.todos-con {
+  padding: 0 5px;
+  position: fixed;
+  width: inherit;
+  height: 52vh;
+}
+
+.todo-item {
+  min-height: 45px;
+  list-style-type: none;
+  border-radius: 4px;
+  background-color: #dfd8d6;
+  padding: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.todo-item:hover {
+  background-color: #fff;
+}
+
+.todo-item::before {
+  content: "";
+  background-image: url("https://res.cloudinary.com/duq1ylxl3/image/upload/v1719750695/Untitled_design_2_ljokup.png");
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+.todo-item:hover {
+  .del-icon,
+  .details {
+    visibility: visible;
+  }
+}
+
+.todo-div {
+  width: 100%;
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: 250px 1fr 1fr;
+  text-align: right;
+  align-items: center;
+  margin-left: 12px;
+}
+
+.todo-task {
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.checked {
+  .todo-task {
+    text-decoration: line-through;
+    color: #000;
+    font-weight: 600;
+  }
+}
+
+.checked::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-image: url("https://res.cloudinary.com/duq1ylxl3/image/upload/v1719558393/checked_fi4hz6.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.todo-task::first-letter {
+  text-transform: uppercase;
+}
+
+.details {
+  font-size: 14px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.del-icon {
+  cursor: pointer;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 570px) {
+  .todos-con {
+    width: 94%;
+    height: 60vh;
+    position: fixed;
+    padding: 0;
+  }
+
+  .todo-item {
+    min-height: 30px;
+  }
+
+  .todo-item::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .todo-div {
+    grid-template-columns: 180px 1fr 1fr;
+    font-size: 18px;
+  }
+
+  .checked::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .details {
+    font-size: 14px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px gray;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #20d450;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1aa13e;
+}
